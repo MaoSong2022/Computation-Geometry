@@ -33,5 +33,5 @@ int main(int argc, char **argv) {
   return RUN_ALL_TESTS();
 }
 
-// g++ test_GJK.cpp -L /usr/local/lib/googletest/ -lgtest -lgtest_main -lpthread
-// ../src/GJK.cpp ../src/polygon.cpp
+// g++ test_GJK.cpp -I ../include/ -L /usr/local/lib/googletest/ -lgtest
+// -lgtest_main -lpthread ../src/GJK.cpp ../src/polygon.cpp

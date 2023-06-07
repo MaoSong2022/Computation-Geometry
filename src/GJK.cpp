@@ -1,4 +1,4 @@
-#include "../include/GJK.hpp"
+#include "GJK.hpp"
 
 #include <vector>
 
