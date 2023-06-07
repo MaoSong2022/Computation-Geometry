@@ -1,31 +1,31 @@
-#include <vector>
+#include "../include/GJK.hpp"
 
-#include "GJK.hpp"
+#include <vector>
 
 namespace GJK {
 /*
  * @brief determine if two convex shapes intersect
  * @return true if two shapes intersect.
  */
-bool GJK(const Shape *a, const Shape *b) {
+bool algorithm(Polygon *a, Polygon *b) {
   const Point origin(0.0, 0.0, 0.0);
   Point d = (a->center() - b->center()).normalize();
   std::vector<Point> simplex;
   simplex.push_back(support(*a, *b, d));
   d = origin - simplex.front();
-  while (true) {    
+  while (true) {
     Point A = support(*a, *b, d);
     if (A.dot(d) < 0) {  // use epsilon
-      return false; 
+      return false;
     }
-     if (contains_origin(simplex, d)) {
+    if (contains_origin(simplex, d)) {
       return true;
     }
   }
   return true;
 };
 
-Point support(const Shape &a, const Shape &b, const Point &d) {
+Point support(const Polygon &a, const Polygon &b, const Point &d) {
   return a.support(d) - b.support(Point(0, 0, 0) - d);
 };
 
@@ -46,7 +46,7 @@ bool contains_origin(std::vector<Point> &simplex, Point &d) {
     const Point c = simplex[0], b = simplex[1], a = simplex[2];
     const Point ab_perpencular = triple_product(c - a, b - a, b - a);
     const Point ac_perpencular = triple_product(b - a, c - a, c - a);
-    if (ab_perpencular.dot(o - a) > 0.0){
+    if (ab_perpencular.dot(o - a) > 0.0) {
       // the origin is in the region AB
       simplex = std::vector<Point>{b, a};
       d = ab_perpencular;

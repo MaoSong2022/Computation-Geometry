@@ -1,4 +1,4 @@
-#include "polygon.hpp"
+#include "../include/polygon.hpp"
 
 #include <limits>
 

@@ -1,6 +1,9 @@
+#include <iostream>
 
-#include "GJK.hpp"
-#include "polygon.hpp"
+#include "include/GJK.hpp"
+#include "include/polygon.hpp"
+
+using namespace GJK;
 
 int main(int argc, char *argv[])
 {
@@ -8,7 +11,10 @@ int main(int argc, char *argv[])
                                     GJK::Point(9.0, 9.0)};
   std::vector<GJK::Point> vertices2{GJK::Point(4.0, 11.0), GJK::Point(5.0, 5.0),
                                     GJK::Point(9.0, 9.0)};
-  GJK::Shape *triangle1 = new GJK::Polygon(vertices1);
-  GJK::Shape *triangle2 = new GJK::Polygon(vertices2);
-  auto status = GJK::GJK(triangle1, triangle2);
+  GJK::Polygon *triangle1 = new GJK::Polygon(vertices1);
+  GJK::Polygon *triangle2 = new GJK::Polygon(vertices2);
+  auto status = GJK::algorithm(triangle1, triangle2);
+  std::cout << status << std::endl;
+  std::cout << "hello" << std::endl;
+  return 0;
 }

@@ -29,6 +29,18 @@ class Point {
     return Point(x + other.x, y + other.y, z + other.z);
   }
 
+  void operator+=(const Point &other) {
+    this->x += other.x;
+    this->y += other.y;
+    this->z += other.y;
+  }
+
+  void operator/=(const double value) {
+    this->x /= value;
+    this->y /= value;
+    this->z /= value;
+  }
+
   double dot(const Point &other) const {
     return x * other.x + y * other.y + z * other.z;
   };
