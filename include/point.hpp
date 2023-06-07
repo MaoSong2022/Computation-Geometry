@@ -21,6 +21,8 @@ class Point {
     return Point(x - other.x, y - other.y, z - other.z);
   }
 
+  Point operator-() const { return Point(-x, -y, -z); }
+
   Point operator/(double scalar) const {
     return Point(x / scalar, y / scalar, z / scalar);
   };

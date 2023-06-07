@@ -3,15 +3,14 @@
 #include "shape.hpp"
 
 namespace GJK {
-class Polygon {
+class Polygon : public Shape {
  private:
-  std::vector<Point> vertices_;
-  Point center_;
+  // std::vector<Point> vertices_;
+  // Point center_;
 
  public:
   Polygon() = default;
-  Polygon(const std::vector<Point>& vertices)
-      : vertices_(vertices), center_(Point()) {
+  Polygon(const std::vector<Point>& vertices) : Shape(vertices, Point()) {
     for (const auto& vertex : vertices_) {
       center_ += vertex;
     }
