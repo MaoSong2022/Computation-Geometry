@@ -3,10 +3,6 @@
 #include <vector>
 
 namespace GJK {
-/*
- * @brief determine if two convex shapes intersect
- * @return true if two shapes intersect.
- */
 bool algorithm(Shape *a, Shape *b) {
   const Point origin(0.0, 0.0, 0.0);
   Point d = (a->center() - b->center()).normalize();
