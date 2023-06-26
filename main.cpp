@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "GJK.hpp"
+#include "polygon.hpp"
 
 int main(int argc, char const *argv[]) {
   std::vector<GJK::Point> vertices1{GJK::Point(4.0, 11.0), GJK::Point(5.0, 5.0),
