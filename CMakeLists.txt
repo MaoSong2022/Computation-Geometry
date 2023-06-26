@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.15 FATAL_ERROR)
 
-project(GJK_test)
+project(GJK)
 
-add_subdirectory(src)
+include_directories(${GJK_SOURCE_DIR}/include)
 
-link_directories(src)
-add_executable(GJK_test main.cpp)
-target_link_libraries(GJK_test GJK)
+file(GLOB SOURCES src/*.cpp)
+
+add_executable(GJK main.cpp ${SOURCES})
