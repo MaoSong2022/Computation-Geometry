@@ -17,46 +17,22 @@ class Point {
 
   Point(const Point &point) : x(point.x), y(point.y), z(point.z) {}
 
-  Point operator-(const Point &other) const {
-    return Point(x - other.x, y - other.y, z - other.z);
-  }
+  Point operator-(const Point &other) const;
 
-  Point operator-() const { return Point(-x, -y, -z); }
+  Point operator-() const;
 
-  Point operator/(double scalar) const {
-    return Point(x / scalar, y / scalar, z / scalar);
-  };
+  Point operator/(double scalar) const;
 
-  Point operator+(const Point &other) const {
-    return Point(x + other.x, y + other.y, z + other.z);
-  }
+  Point operator+(const Point &other) const;
 
-  void operator+=(const Point &other) {
-    this->x += other.x;
-    this->y += other.y;
-    this->z += other.y;
-  }
+  void operator+=(const Point &other);
 
-  void operator/=(const double value) {
-    this->x /= value;
-    this->y /= value;
-    this->z /= value;
-  }
+  void operator/=(const double value);
 
-  double dot(const Point &other) const {
-    return x * other.x + y * other.y + z * other.z;
-  };
+  double dot(const Point &other) const;
 
-  Point normalize() const {
-    double l2_norm = sqrt(x * x + y * y + z * z);
-    if (l2_norm < kEPS) return Point(0, 0, 0);
-    return *this / l2_norm;
-  }
+  Point normalize() const;
 
-  Point cross_product(const Point &other) const {
-    return Point(this->y * other.z - this->z * other.z,
-                 this->x * other.z - this->z * other.x,
-                 this->x * other.y - this->y * other.x);
-  }
+  Point cross_product(const Point &other) const;
 };
 }  // namespace GJK
