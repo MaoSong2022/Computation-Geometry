@@ -14,12 +14,16 @@ class Shape {
   Shape() = default;
   Shape(const std::vector<Point> &vertices, const Point &center)
       : vertices_(vertices), center_(center) {}
-  Shape(const std::vector<Point> &vertices, const Point &&center)
-      : vertices_(vertices), center_(center) {}
   virtual ~Shape() {}
 
   const Point &center() const { return center_; }
-
+  
+  /**
+   * @brief compute the furthest point along a direction
+   * 
+   * @param d direction
+   * @return Point 
+   */
   virtual Point support(const Point &d) const = 0;
 };
 }  // namespace GJK
