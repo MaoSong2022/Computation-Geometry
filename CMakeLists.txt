@@ -2,8 +2,13 @@ cmake_minimum_required(VERSION 3.15 FATAL_ERROR)
 
 project(GJK)
 
-include_directories(${GJK_SOURCE_DIR}/include)
+# Find the Google Test library
+find_package(GTest REQUIRED)
 
-file(GLOB SOURCES src/*.cpp)
+set(CMAKE_CXX_STANDARD 11)
 
-add_executable(GJK main.cpp ${SOURCES})
+include_directories(include)
+
+# file(GLOB SOURCES src/*.cpp)
+add_subdirectory(src)
+add_subdirectory(test)
