@@ -3,11 +3,11 @@
 
 #include <vector>
 
-#include "../include/GJK.hpp"
-#include "../include/point.hpp"
-#include "../include/polygon.hpp"
+#include "GJK.hpp"
+#include "point.hpp"
+#include "polygon.hpp"
 
-TEST(GJK__Test, CollisionFree) {
+TEST(GJK_Test, CollisionFree) {
   std::vector<GJK::Point> vertices1{GJK::Point(4.0, 11.0), GJK::Point(5.0, 5.0),
                                     GJK::Point(9.0, 9.0)};
   std::vector<GJK::Point> vertices2{GJK::Point(2.0, 4.0), GJK::Point(6.0, 5.0),
@@ -18,7 +18,7 @@ TEST(GJK__Test, CollisionFree) {
   ASSERT_FALSE(GJK::algorithm(triangle1, triangle2));
 }
 
-TEST(GJK__Test, InCollision) {
+TEST(GJK_Test, InCollision) {
   std::vector<GJK::Point> vertices1{GJK::Point(4.0, 11.0), GJK::Point(5.0, 5.0),
                                     GJK::Point(9.0, 9.0)};
   std::vector<GJK::Point> vertices2{GJK::Point(4.0, 11.0), GJK::Point(5.0, 5.0),
