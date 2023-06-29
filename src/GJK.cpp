@@ -25,7 +25,7 @@ Point support(Shape *a, Shape *b, const Point &d) {
   return a->support(d) - b->support(-d);
 };
 
-Point triple_product(const Point &a, const Point &b, const Point c) {
+Point triple_product(const Point &a, const Point &b, const Point &c) {
   return a.cross_product(b).cross_product(c);
 };
 

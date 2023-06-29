@@ -11,7 +11,7 @@ bool algorithm(Shape *a, Shape *b);
 
 Point support(Shape *a, Shape *b, const Point &d);
 
-Point triple_product(const Point &a, const Point &b, const Point c);
+Point triple_product(const Point &a, const Point &b, const Point &c);
 
 /*
  * @brief Checks if the origin (0,0,0) is contained within the simplex.
