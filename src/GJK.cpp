@@ -11,7 +11,7 @@ bool algorithm(Shape *a, Shape *b) {
   d = origin - simplex.front();
   while (true) {
     Point A = support(a, b, d);
-    if (A.dot(d) < 0) {  // use epsilon
+    if (A.dot_product(d) < 0) {  // use epsilon
       return false;
     }
     if (contains_origin(simplex, d)) {
@@ -42,12 +42,12 @@ bool contains_origin(std::vector<Point> &simplex, Point &d) {
     const Point c = simplex[0], b = simplex[1], a = simplex[2];
     const Point ab_perpendicular = triple_product(c - a, b - a, b - a);
     const Point ac_perpendicular = triple_product(b - a, c - a, c - a);
-    if (ab_perpendicular.dot(o - a) > 0.0) {
+    if (ab_perpendicular.dot_product(o - a) > 0.0) {
       // the origin is in the region AB
       simplex = std::vector<Point>{b, a};
       d = ab_perpendicular;
       return false;
-    } else if (ac_perpendicular.dot(o - a)) {
+    } else if (ac_perpendicular.dot_product(o - a)) {
       // the origin is in the region AC
       simplex = std::vector<Point>{c, a};
       d = ac_perpendicular;

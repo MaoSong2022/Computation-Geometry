@@ -28,7 +28,7 @@ namespace GJK {
     this->z /= value;
   }
 
-  double Point::dot(const Point &other) const {
+  double Point::dot_product(const Point &other) const {
     return x * other.x + y * other.y + z * other.z;
   };
 

@@ -29,7 +29,7 @@ class Point {
 
   void operator/=(const double value);
 
-  double dot(const Point &other) const;
+  double dot_product(const Point &other) const;
 
   Point normalize() const;
 
