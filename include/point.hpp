@@ -4,9 +4,7 @@
 
 namespace GJK {
 
-class Point {
- private:
-  double kEPS = 1e-6;
+  static constexpr double kEPS = 1e-6;
   double x;
   double y;
   double z;
