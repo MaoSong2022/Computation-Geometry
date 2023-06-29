@@ -19,7 +19,7 @@ namespace GJK {
   void Point::operator+=(const Point &other) {
     this->x += other.x;
     this->y += other.y;
-    this->z += other.y;
+    this->z += other.z;
   }
 
   void Point::operator/=(const double value) {
@@ -39,7 +39,7 @@ namespace GJK {
   }
 
   Point Point::cross_product(const Point &other) const {
-    return Point(this->y * other.z - this->z * other.z,
+    return Point(this->y * other.z - this->z * other.y,
                  this->x * other.z - this->z * other.x,
                  this->x * other.y - this->y * other.x);
   }
