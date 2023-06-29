@@ -4,11 +4,12 @@
 
 namespace GJK {
 
+struct Point {
   static constexpr double kEPS = 1e-6;
   double x;
   double y;
   double z;
- public:
+
   Point() = default;
   Point(double x_, double y_) : x(x_), y(y_), z(0.0) {}
   Point(double x_, double y_, double z_) : x(x_), y(y_), z(z_) {}
