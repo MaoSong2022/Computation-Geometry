@@ -10,11 +10,7 @@ class PointTestSuite : public ::testing::Test {
     scalar = 2.0;
   }
 
-  void TearDown() override {
-    point1 = GJK::Point(1.0, 2.0, 3.0);
-    point2 = GJK::Point(3.0, 2.0, 1.0);
-    scalar = 2.0;
-  }
+  void TearDown() override {}
 
   GJK::Point point1;
   GJK::Point point2;
