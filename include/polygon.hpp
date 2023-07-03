@@ -4,10 +4,6 @@
 
 namespace GJK {
 class Polygon : public Shape {
- private:
-  // std::vector<Point> vertices_;
-  // Point center_;
-
  public:
   Polygon() = default;
   Polygon(const std::vector<Point>& vertices) : Shape(vertices, Point()) {
@@ -16,10 +12,8 @@ class Polygon : public Shape {
     }
     center_ /= (1.0 * vertices.size());
   }
-  ~Polygon(){}
+  ~Polygon() {}
 
-  Point center() const { return vertices_[0]; }
-
-  Point support(const Point& d) const;
+  Point support(const Point& d) const override;
 };
 }  // namespace GJK
