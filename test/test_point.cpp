@@ -68,6 +68,6 @@ TEST_F(PointTestSuite, DotProduct) {
 TEST_F(PointTestSuite, CrossProduct) {
   GJK::Point point_cross_product = point1.cross_product(point2);
   ASSERT_NEAR(point_cross_product.x, -4.0, kEPS);
-  ASSERT_NEAR(point_cross_product.y, -8.0, kEPS);
+  ASSERT_NEAR(point_cross_product.y, 8.0, kEPS);
   ASSERT_NEAR(point_cross_product.z, -4.0, kEPS);
 }
