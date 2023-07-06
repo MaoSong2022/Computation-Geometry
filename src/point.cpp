@@ -1,5 +1,6 @@
 #include "point.hpp"
 
+#include <cmath>  // abs, sqrt
 
 namespace GJK {
   Point Point::operator-(const Point &other) const {
@@ -15,6 +16,13 @@ namespace GJK {
   Point Point::operator+(const Point &other) const {
     return Point(x + other.x, y + other.y, z + other.z);
   }
+
+  bool Point::operator==(const Point &other) const {
+    return std::abs(x - other.x) <= kEPS && std::abs(y - other.y) <= kEPS &&
+           std::abs(z - other.z) <= kEPS;
+  }
+
+  bool Point::operator!=(const Point &other) const { return !(*this == other); }
 
   void Point::operator+=(const Point &other) {
     this->x += other.x;
@@ -33,7 +41,7 @@ namespace GJK {
   };
 
   Point Point::normalize() const {
-    double l2_norm = sqrt(x * x + y * y + z * z);
+    double l2_norm = std::sqrt(x * x + y * y + z * z);
     if (l2_norm < kEPS) return Point(0, 0, 0);
     return *this / l2_norm;
   }

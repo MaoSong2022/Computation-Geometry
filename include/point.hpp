@@ -1,7 +1,5 @@
 #pragma once
 
-#include <math.h>  // sqrt
-
 namespace GJK {
 
 struct Point {
@@ -24,6 +22,9 @@ struct Point {
 
   Point operator+(const Point &other) const;
 
+  bool operator==(const Point &other) const;
+
+  bool operator!=(const Point &other) const;
   void operator+=(const Point &other);
 
   void operator/=(const double value);
