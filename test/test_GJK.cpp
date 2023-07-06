@@ -55,7 +55,3 @@ TEST_F(GJKTestSuite, CollisionFree) {
 //   ASSERT_TRUE(GJK::algorithm(triangle1, triangle2));
 // }
 
-int main(int argc, char **argv) {
-  testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}
