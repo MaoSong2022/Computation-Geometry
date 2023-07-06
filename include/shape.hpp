@@ -17,12 +17,13 @@ class Shape {
   virtual ~Shape() {}
 
   const Point &center() const { return center_; }
-  
+  const std::vector<Point> &vertices() const { return vertices_; }
+
   /**
    * @brief compute the furthest point along a direction
-   * 
+   *
    * @param d direction
-   * @return Point 
+   * @return Point
    */
   virtual Point support(const Point &d) const = 0;
 };
