@@ -26,7 +26,18 @@ class GJKTestSuite : public ::testing::Test {
 
   GJK::Shape *triangle1;
   GJK::Shape *triangle2;
+  const double kEPS = 1e-3;
 };
+
+TEST_F(GJKTestSuite, TripleProduct) {
+  GJK::Point result =
+      GJK::triple_product(triangle1->vertices()[1] - triangle1->vertices()[0],
+                          triangle1->vertices()[0] - GJK::Point(0, 0, 0),
+                          triangle1->vertices()[1] - triangle1->vertices()[0]);
+  ASSERT_NEAR(result.x, 210, kEPS);
+  ASSERT_NEAR(result.y, 35, kEPS);
+  ASSERT_NEAR(result.z, 0, kEPS);
+}
 
 TEST_F(GJKTestSuite, CollisionFree) {
   ASSERT_FALSE(GJK::algorithm(triangle1, triangle2));
