@@ -15,9 +15,6 @@ Point triple_product(const Point &a, const Point &b, const Point &c);
 
 bool is_same_direction(const Point &d1, const Point &d2);
 
-
-bool in_line_segment(const Point &P1, const Point &P2, const Point &Q);
-
 bool line_case(std::vector<Point> &simplex, Point &d);
 
 /**
