@@ -3,6 +3,8 @@
 #include <algorithm>
 #include <vector>
 
+#include "line_segment.hpp"
+
 namespace Geometry {
 bool GJK_algorithm(Shape *a, Shape *b) {
   const Point origin(0.0, 0.0, 0.0);
@@ -35,20 +37,10 @@ bool is_same_direction(const Point &d1, const Point &d2) {
   return d1.dot_product(d2) > 0;
 }
 
-bool in_line_segment(const Point &P1, const Point &P2, const Point &Q) {
-  if ((Q - P1).cross_product(P2 - P1) == Point(0.0, 0.0, 0.0) &&
-      std::min(P1.x, P2.x) <= Q.x && Q.x <= std::max(P1.x, P2.x) &&
-      std::min(P1.y, P2.y) <= Q.y && Q.y <= std::max(P1.y, P2.y) &&
-      std::min(P1.z, P2.z) <= Q.z && Q.z <= std::max(P1.z, P2.z)) {
-    return true;
-  }
-  return false;
-}
-
 bool line_case(std::vector<Point> &simplex, Point &d) {
   const Point &b = simplex[0];
   const Point &a = simplex[1];
-  if (in_line_segment(a, b, Point(0.0, 0.0, 0.0))) {
+  if (LineSegment(a, b).contains(Point(0.0, 0.0, 0.0))) {
     return true;
   }
   if (is_same_direction(b - a, -a)) {
