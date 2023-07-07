@@ -42,7 +42,7 @@ Point Point::operator-(const Point &other) const {
 
   Point Point::normalize() const {
     double l2_norm = std::sqrt(x * x + y * y + z * z);
-    if (l2_norm < kEPS) return Point(0, 0, 0);
+    if (l2_norm < kEPS) return kOrigin;
     return *this / l2_norm;
   }
 

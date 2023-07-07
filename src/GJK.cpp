@@ -7,11 +7,10 @@
 
 namespace Geometry {
 bool GJK_algorithm(Shape *a, Shape *b) {
-  const Point origin(0.0, 0.0, 0.0);
   Point d = (a->center() - b->center()).normalize();
   std::vector<Point> simplex;
   simplex.push_back(support(a, b, d));
-  d = origin - simplex.front();
+  d = kOrigin - simplex.front();
   while (true) {
     Point A = support(a, b, d);
     if (A.dot_product(d) < 0) {
@@ -40,7 +39,7 @@ bool is_same_direction(const Point &d1, const Point &d2) {
 bool line_case(std::vector<Point> &simplex, Point &d) {
   const Point &b = simplex[0];
   const Point &a = simplex[1];
-  if (LineSegment(a, b).contains(Point(0.0, 0.0, 0.0))) {
+  if (LineSegment(a, b).contains(kOrigin)) {
     return true;
   }
   if (is_same_direction(b - a, -a)) {
@@ -53,7 +52,6 @@ bool line_case(std::vector<Point> &simplex, Point &d) {
 }
 
 bool contains_origin(std::vector<Point> &simplex, Point &d) {
-  const Point o(0.0, 0.0, 0.0);
   if (simplex.size() == 2) {
     return line_case(simplex, d);
   } else {
@@ -61,12 +59,12 @@ bool contains_origin(std::vector<Point> &simplex, Point &d) {
     const Point c = simplex[0], b = simplex[1], a = simplex[2];
     const Point ab_perpendicular = triple_product(c - a, b - a, b - a);
     const Point ac_perpendicular = triple_product(b - a, c - a, c - a);
-    if (ab_perpendicular.dot_product(o - a) > 0.0) {
+    if (ab_perpendicular.dot_product(kOrigin - a) > 0.0) {
       // the origin is in the region AB
       simplex = std::vector<Point>{b, a};
       d = ab_perpendicular;
       return false;
-    } else if (ac_perpendicular.dot_product(o - a)) {
+    } else if (ac_perpendicular.dot_product(kOrigin - a)) {
       // the origin is in the region AC
       simplex = std::vector<Point>{c, a};
       d = ac_perpendicular;

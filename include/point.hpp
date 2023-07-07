@@ -35,4 +35,6 @@ struct Point {
 
   Point cross_product(const Point &other) const;
 };
+
+const Point kOrigin = Point(0.0, 0.0, 0.0);
 }  // namespace Geometry
