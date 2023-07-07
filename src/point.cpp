@@ -2,9 +2,9 @@
 
 #include <cmath>  // abs, sqrt
 
-namespace GJK {
-  Point Point::operator-(const Point &other) const {
-    return Point(x - other.x, y - other.y, z - other.z);
+namespace Geometry {
+Point Point::operator-(const Point &other) const {
+  return Point(x - other.x, y - other.y, z - other.z);
   }
 
   Point Point::operator-() const { return Point(-x, -y, -z); }
@@ -51,4 +51,4 @@ namespace GJK {
                  this->z * other.x - this->x * other.z,
                  this->x * other.y - this->y * other.x);
   }
-}
+  }  // namespace Geometry

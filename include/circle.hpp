@@ -2,7 +2,7 @@
 
 #include "shape.hpp"
 
-namespace GJK {
+namespace Geometry {
 class Circle : public Shape {
  private:
   double radius_;
@@ -13,4 +13,4 @@ class Circle : public Shape {
 
   Point support(const Point& d) const override;
 };
-}  // namespace GJK
+}  // namespace Geometry

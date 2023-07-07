@@ -1,6 +1,6 @@
 #pragma once
 
-namespace GJK {
+namespace Geometry {
 
 struct Point {
   static constexpr double kEPS = 1e-6;
@@ -35,4 +35,4 @@ struct Point {
 
   Point cross_product(const Point &other) const;
 };
-}  // namespace GJK
+}  // namespace Geometry

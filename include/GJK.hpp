@@ -2,12 +2,12 @@
 
 #include "shape.hpp"
 
-namespace GJK {
+namespace Geometry {
 /*
  * @brief determine if two convex shapes intersect
  * @return true if two shapes intersect.
  */
-bool algorithm(Shape *a, Shape *b);
+bool GJK_algorithm(Shape *a, Shape *b);
 
 Point support(Shape *a, Shape *b, const Point &d);
 
@@ -40,4 +40,4 @@ bool line_case(std::vector<Point> &simplex, Point &d);
  * otherwise.
  */
 bool contains_origin(std::vector<Point> &simplex, Point &d);
-}  // namespace GJK
+}  // namespace Geometry

@@ -1,6 +1,6 @@
 
 #include "circle.hpp"
 
-namespace GJK {
+namespace Geometry {
 Point Circle::support(const Point& d) const { return center_ + d.normalize(); };
-}  // namespace GJK
+}  // namespace Geometry

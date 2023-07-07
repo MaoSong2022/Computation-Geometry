@@ -2,7 +2,7 @@
 
 #include <limits>
 
-namespace GJK {
+namespace Geometry {
 Point Polygon::support(const Point& d) const {
   int index = -1;
   double max_value = std::numeric_limits<double>::lowest();
@@ -15,4 +15,4 @@ Point Polygon::support(const Point& d) const {
   }
   return vertices_[index];
 };
-}  // namespace GJK
+}  // namespace Geometry

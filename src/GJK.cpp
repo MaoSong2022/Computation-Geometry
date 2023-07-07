@@ -3,8 +3,8 @@
 #include <algorithm>
 #include <vector>
 
-namespace GJK {
-bool algorithm(Shape *a, Shape *b) {
+namespace Geometry {
+bool GJK_algorithm(Shape *a, Shape *b) {
   const Point origin(0.0, 0.0, 0.0);
   Point d = (a->center() - b->center()).normalize();
   std::vector<Point> simplex;
@@ -83,4 +83,4 @@ bool contains_origin(std::vector<Point> &simplex, Point &d) {
     return true;
   }
 };
-}  // namespace GJK
+}  // namespace Geometry

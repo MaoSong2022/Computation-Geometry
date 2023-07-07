@@ -4,7 +4,7 @@
 
 #include "point.hpp"
 
-namespace GJK {
+namespace Geometry {
 class Shape {
  protected:
   Point center_;
@@ -27,4 +27,4 @@ class Shape {
    */
   virtual Point support(const Point &d) const = 0;
 };
-}  // namespace GJK
+}  // namespace Geometry

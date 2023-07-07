@@ -2,7 +2,7 @@
 
 #include "shape.hpp"
 
-namespace GJK {
+namespace Geometry {
 class Polygon : public Shape {
  public:
   Polygon() = default;
@@ -16,4 +16,4 @@ class Polygon : public Shape {
 
   Point support(const Point& d) const override;
 };
-}  // namespace GJK
+}  // namespace Geometry
