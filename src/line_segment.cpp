@@ -26,7 +26,6 @@ bool LineSegment::contains(const Point& point) const {
   return false;
 }
 
-// FIXME: the computation is not correct
 double LineSegment::distance_to(const Point& point) const {
   const double kEps = 1e-6;
   Point perpendicular;
@@ -37,12 +36,9 @@ double LineSegment::distance_to(const Point& point) const {
     perpendicular = Point(point.x, endpoint1_.y);
   } else {
     // compute the perpendicular point to the line defined by two end points
-    double slope =
-        (endpoint2_.y - endpoint1_.y) / (endpoint2_.x - endpoint1_.x);
-    perpendicular.x =
-        slope / (slope * slope + 1) *
-        (point.y - endpoint1_.y + point.x / slope + slope * endpoint1_.x);
-    perpendicular.y = -1.0 / slope * (perpendicular.x - point.x) + point.y;
+    Point direction = (endpoint2_ - endpoint1_).normalize();
+    Point projection = point - endpoint1_;
+    perpendicular = endpoint1_ + projection.dot_product(direction) * direction;
   }
   // check if the perpendicular point is on the line segment
   if (contains(perpendicular)) {
