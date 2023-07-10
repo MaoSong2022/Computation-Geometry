@@ -21,17 +21,22 @@ struct Point {
   Point operator/(double scalar) const;
 
   Point operator+(const Point &other) const;
+  Point operator*(double scalar) const;
+  friend Point operator*(double scalar, const Point &other);
 
   bool operator==(const Point &other) const;
 
+  Point &operator*=(double scalar);
   bool operator!=(const Point &other) const;
-  void operator+=(const Point &other);
+  Point &operator+=(const Point &other);
 
-  void operator/=(const double value);
+  Point &operator/=(const double value);
 
   double dot_product(const Point &other) const;
 
   double distance_to(const Point &other) const;
+
+  double length() const;
 
   Point normalize() const;
 
