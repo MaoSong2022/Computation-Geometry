@@ -65,6 +65,11 @@ TEST_F(PointTestSuite, DotProduct) {
   ASSERT_NEAR(point_dot_product, 10.0, kEPS);
 }
 
+TEST_F(PointTestSuite, distance_to) {
+  double distance = point1.distance_to(point2);
+  ASSERT_NEAR(distance, 2.82842712, kEPS);
+}
+
 TEST_F(PointTestSuite, CrossProduct) {
   Geometry::Point point_cross_product = point1.cross_product(point2);
   ASSERT_NEAR(point_cross_product.x, -4.0, kEPS);
