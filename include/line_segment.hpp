@@ -5,7 +5,7 @@
 namespace Geometry {
 class LineSegment : public Shape {
  public:
-  LineSegment() = delete;
+  LineSegment() = default;
   explicit LineSegment(const Point& point1, const Point& point2)
       : endpoint1_(point1), endpoint2_(point2) {
     center_ = (endpoint1_ + endpoint2_) / 2.0;
@@ -32,6 +32,8 @@ class LineSegment : public Shape {
    * @see Point
    */
   bool contains(const Point& point) const;
+
+  double distance_to(const Point& point) const;
 
  private:
   Point endpoint1_;

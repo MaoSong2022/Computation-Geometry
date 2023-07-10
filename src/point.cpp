@@ -40,6 +40,12 @@ Point Point::operator-(const Point &other) const {
     return x * other.x + y * other.y + z * other.z;
   };
 
+  double Point::distance_to(const Point &other) const {
+    return std::sqrt((x - other.x) * (x - other.x) +
+                     (y - other.y) * (y - other.y) +
+                     (z - other.z) * (z - other.z));
+  }
+
   Point Point::normalize() const {
     double l2_norm = std::sqrt(x * x + y * y + z * z);
     if (l2_norm < kEPS) return kOrigin;

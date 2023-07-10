@@ -31,6 +31,8 @@ struct Point {
 
   double dot_product(const Point &other) const;
 
+  double distance_to(const Point &other) const;
+
   Point normalize() const;
 
   Point cross_product(const Point &other) const;

@@ -1,5 +1,7 @@
 #include "line_segment.hpp"
 
+#include <algorithm>
+
 namespace Geometry {
 Point LineSegment::support(const Point& d) const {
   double dot_product1 = (endpoint1_ - center_).dot_product(d);
@@ -23,4 +25,30 @@ bool LineSegment::contains(const Point& point) const {
   }
   return false;
 }
+
+// FIXME: the computation is not correct
+double LineSegment::distance_to(const Point& point) const {
+  const double kEps = 1e-6;
+  Point perpendicular;
+  // check if the line segment is parallel to axis
+  if (endpoint1_.x == endpoint2_.x) {
+    perpendicular = Point(endpoint1_.x, point.y);
+  } else if (endpoint1_.y == endpoint2_.y) {
+    perpendicular = Point(point.x, endpoint1_.y);
+  } else {
+    // compute the perpendicular point to the line defined by two end points
+    double slope =
+        (endpoint2_.y - endpoint1_.y) / (endpoint2_.x - endpoint1_.x);
+    perpendicular.x =
+        slope / (slope * slope + 1) *
+        (point.y - endpoint1_.y + point.x / slope + slope * endpoint1_.x);
+    perpendicular.y = -1.0 / slope * (perpendicular.x - point.x) + point.y;
+  }
+  // check if the perpendicular point is on the line segment
+  if (contains(perpendicular)) {
+    return point.distance_to(perpendicular);
+  }
+  return std::min(point.distance_to(endpoint1_), point.distance_to(endpoint2_));
+}
+
 }  // namespace Geometry
