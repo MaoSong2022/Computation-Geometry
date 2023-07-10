@@ -22,8 +22,7 @@ struct Point {
 
   Point operator+(const Point &other) const;
   Point operator*(double scalar) const;
-  friend Point operator*(double scalar, const Point &other);
-
+  
   bool operator==(const Point &other) const;
 
   Point &operator*=(double scalar);
@@ -42,6 +41,8 @@ struct Point {
 
   Point cross_product(const Point &other) const;
 };
+
+Point operator*(double scalar, const Point &other);
 
 const Point kOrigin = Point(0.0, 0.0, 0.0);
 }  // namespace Geometry
