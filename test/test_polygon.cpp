@@ -1,14 +1,14 @@
 #include <gtest/gtest.h>
 
-#include "point.hpp"
 #include "polygon.hpp"
+#include "vec3d.hpp"
 
 class PolygonTestSuite : public ::testing::Test {
  protected:
   void SetUp() override {
-    std::vector<Geometry::Point> vertices1{Geometry::Point(4.0, 11.0),
-                                           Geometry::Point(5.0, 5.0),
-                                           Geometry::Point(9.0, 9.0)};
+    std::vector<Geometry::Vec3d> vertices1{Geometry::Vec3d(4.0, 11.0),
+                                           Geometry::Vec3d(5.0, 5.0),
+                                           Geometry::Vec3d(9.0, 9.0)};
     triangle1 = new Geometry::Polygon(vertices1);
   }
 
@@ -25,8 +25,8 @@ TEST_F(PolygonTestSuite, center) {
 }
 
 TEST_F(PolygonTestSuite, support) {
-  Geometry::Point direction = Geometry::Point(1, 1);
-  Geometry::Point d = triangle1->support(direction);
+  Geometry::Vec3d direction = Geometry::Vec3d(1, 1);
+  Geometry::Vec3d d = triangle1->support(direction);
   ASSERT_NEAR(d.x, 9.0, kEPS);
   ASSERT_NEAR(d.y, 9.0, kEPS);
   ASSERT_NEAR(d.z, 0.0, kEPS);

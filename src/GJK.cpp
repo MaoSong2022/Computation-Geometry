@@ -7,12 +7,12 @@
 
 namespace Geometry {
 bool GJK_algorithm(Shape *a, Shape *b) {
-  Point d = (a->center() - b->center()).normalize();
-  std::vector<Point> simplex;
+  Vec3d d = (a->center() - b->center()).normalize();
+  std::vector<Vec3d> simplex;
   simplex.push_back(support(a, b, d));
   d = kOrigin - simplex.front();
   while (true) {
-    Point A = support(a, b, d);
+    Vec3d A = support(a, b, d);
     if (A.dot_product(d) < 0) {
       return false;
     }
@@ -24,49 +24,49 @@ bool GJK_algorithm(Shape *a, Shape *b) {
   return true;
 };
 
-Point support(Shape *a, Shape *b, const Point &d) {
+Vec3d support(Shape *a, Shape *b, const Vec3d &d) {
   return a->support(d) - b->support(-d);
 };
 
-Point triple_product(const Point &a, const Point &b, const Point &c) {
+Vec3d triple_product(const Vec3d &a, const Vec3d &b, const Vec3d &c) {
   return a.cross_product(b).cross_product(c);
 };
 
-bool is_same_direction(const Point &d1, const Point &d2) {
+bool is_same_direction(const Vec3d &d1, const Vec3d &d2) {
   return d1.dot_product(d2) > 0;
 }
 
-bool line_case(std::vector<Point> &simplex, Point &d) {
-  const Point &b = simplex[0];
-  const Point &a = simplex[1];
+bool line_case(std::vector<Vec3d> &simplex, Vec3d &d) {
+  const Vec3d &b = simplex[0];
+  const Vec3d &a = simplex[1];
   if (LineSegment(a, b).contains(kOrigin)) {
     return true;
   }
   if (is_same_direction(b - a, -a)) {
     d = triple_product(b - a, -a, b - a);
   } else {
-    simplex = std::vector<Point>{a};
+    simplex = std::vector<Vec3d>{a};
     d = -a;
   }
   return false;
 }
 
-bool contains_origin(std::vector<Point> &simplex, Point &d) {
+bool contains_origin(std::vector<Vec3d> &simplex, Vec3d &d) {
   if (simplex.size() == 2) {
     return line_case(simplex, d);
   } else {
     // triangle case
-    const Point c = simplex[0], b = simplex[1], a = simplex[2];
-    const Point ab_perpendicular = triple_product(c - a, b - a, b - a);
-    const Point ac_perpendicular = triple_product(b - a, c - a, c - a);
+    const Vec3d c = simplex[0], b = simplex[1], a = simplex[2];
+    const Vec3d ab_perpendicular = triple_product(c - a, b - a, b - a);
+    const Vec3d ac_perpendicular = triple_product(b - a, c - a, c - a);
     if (ab_perpendicular.dot_product(kOrigin - a) > 0.0) {
       // the origin is in the region AB
-      simplex = std::vector<Point>{b, a};
+      simplex = std::vector<Vec3d>{b, a};
       d = ab_perpendicular;
       return false;
     } else if (ac_perpendicular.dot_product(kOrigin - a)) {
       // the origin is in the region AC
-      simplex = std::vector<Point>{c, a};
+      simplex = std::vector<Vec3d>{c, a};
       d = ac_perpendicular;
       return false;
     }

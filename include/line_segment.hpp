@@ -6,37 +6,41 @@ namespace Geometry {
 class LineSegment : public Shape {
  public:
   LineSegment() = default;
-  explicit LineSegment(const Point& point1, const Point& point2)
+  explicit LineSegment(const Vec3d& point1, const Vec3d& point2)
       : endpoint1_(point1), endpoint2_(point2) {
     center_ = (endpoint1_ + endpoint2_) / 2.0;
   }
 
-  LineSegment(const std::vector<Point>& vertices)
-      : Shape(vertices, Point()),
+  LineSegment(const std::vector<Vec3d>& vertices)
+      : Shape(vertices, Vec3d()),
         endpoint1_(vertices[0]),
         endpoint2_(vertices[1]) {
     center_ = (endpoint1_ + endpoint2_) / 2.0;
   }
   ~LineSegment() {}
 
-  Point support(const Point& d) const override;
+  Vec3d support(const Vec3d& d) const override;
 
   /**
-   * @brief if a point is on the line segment.
+   * @brief Checks if a given point lies on the line segment.
    *
-   * @param point A Point object representing the point to check.
-   *
-   * @return A boolean value indicating whether the point is on the line
-   * segment.
-   *
-   * @see Point
+   * @param point The point to check.
+   * @return True if the point lies on the line segment, false otherwise.
    */
-  bool contains(const Point& point) const;
+  bool contains(const Vec3d& point) const;
 
-  double distance_to(const Point& point) const;
+  /**
+   * @brief Computes the distance between a given point and the line segment.
+   *
+   * @param point The point to compute the distance from.
+   * @return The distance between the point and the line segment.
+   */
+  double distance_to(const Vec3d& point) const;
+
+  bool intersects(const LineSegment& other) const;
 
  private:
-  Point endpoint1_;
-  Point endpoint2_;
+  Vec3d endpoint1_;
+  Vec3d endpoint2_;
 };
 }  // namespace Geometry

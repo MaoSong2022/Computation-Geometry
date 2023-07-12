@@ -6,7 +6,7 @@ namespace Geometry {
 class Polygon : public Shape {
  public:
   Polygon() = default;
-  Polygon(const std::vector<Point>& vertices) : Shape(vertices, Point()) {
+  Polygon(const std::vector<Vec3d>& vertices) : Shape(vertices, Vec3d()) {
     for (const auto& vertex : vertices_) {
       center_ += vertex;
     }
@@ -14,6 +14,6 @@ class Polygon : public Shape {
   }
   ~Polygon() {}
 
-  Point support(const Point& d) const override;
+  Vec3d support(const Vec3d& d) const override;
 };
 }  // namespace Geometry

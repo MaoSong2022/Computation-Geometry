@@ -9,13 +9,13 @@ namespace Geometry {
  */
 bool GJK_algorithm(Shape *a, Shape *b);
 
-Point support(Shape *a, Shape *b, const Point &d);
+Vec3d support(Shape *a, Shape *b, const Vec3d &d);
 
-Point triple_product(const Point &a, const Point &b, const Point &c);
+Vec3d triple_product(const Vec3d &a, const Vec3d &b, const Vec3d &c);
 
-bool is_same_direction(const Point &d1, const Point &d2);
+bool is_same_direction(const Vec3d &d1, const Vec3d &d2);
 
-bool line_case(std::vector<Point> &simplex, Point &d);
+bool line_case(std::vector<Vec3d> &simplex, Vec3d &d);
 
 /**
  * @brief Checks if the origin (0,0,0) is contained within the simplex.
@@ -26,5 +26,5 @@ bool line_case(std::vector<Point> &simplex, Point &d);
  * @return True if the origin is contained within the simplex, false
  * otherwise.
  */
-bool contains_origin(std::vector<Point> &simplex, Point &d);
+bool contains_origin(std::vector<Vec3d> &simplex, Vec3d &d);
 }  // namespace Geometry

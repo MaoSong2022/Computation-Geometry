@@ -8,9 +8,9 @@ class Circle : public Shape {
   double radius_;
 
  public:
-  Circle(const Point& center, double radius)
+  Circle(const Vec3d& center, double radius)
       : Shape({}, center), radius_(radius) {}
 
-  Point support(const Point& d) const override;
+  Vec3d support(const Vec3d& d) const override;
 };
 }  // namespace Geometry

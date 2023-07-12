@@ -2,22 +2,22 @@
 
 #include <vector>
 
-#include "point.hpp"
+#include "vec3d.hpp"
 
 namespace Geometry {
 class Shape {
  protected:
-  Point center_;
-  std::vector<Point> vertices_;
+  Vec3d center_;
+  std::vector<Vec3d> vertices_;
 
  public:
   Shape() = default;
-  Shape(const std::vector<Point> &vertices, const Point &center)
+  Shape(const std::vector<Vec3d> &vertices, const Vec3d &center)
       : vertices_(vertices), center_(center) {}
   virtual ~Shape() {}
 
-  const Point &center() const { return center_; }
-  const std::vector<Point> &vertices() const { return vertices_; }
+  const Vec3d &center() const { return center_; }
+  const std::vector<Vec3d> &vertices() const { return vertices_; }
 
   /**
    * @brief compute the furthest point along a direction
@@ -25,6 +25,6 @@ class Shape {
    * @param d direction
    * @return Point
    */
-  virtual Point support(const Point &d) const = 0;
+  virtual Vec3d support(const Vec3d &d) const = 0;
 };
 }  // namespace Geometry
