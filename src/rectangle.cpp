@@ -2,6 +2,8 @@
 
 #include <limits>
 
+#include "GJK.hpp"
+
 namespace Geometry {
 
 double Rectangle::left_bound() const {
@@ -11,6 +13,7 @@ double Rectangle::left_bound() const {
   }
   return left_bound;
 }
+
 double Rectangle::right_bound() const {
   double right_bound = std::numeric_limits<double>::lowest();
   for (const auto &vertex : vertices_) {
@@ -18,26 +21,51 @@ double Rectangle::right_bound() const {
   }
   return right_bound;
 }
+
+double Rectangle::front_bound() const {
+  double left_bound = std::numeric_limits<double>::infinity();
+  for (const auto &vertex : vertices_) {
+    left_bound = std::min(left_bound, vertex.y);
+  }
+  return left_bound;
+}
+
+double Rectangle::back_bound() const {
+  double right_bound = std::numeric_limits<double>::lowest();
+  for (const auto &vertex : vertices_) {
+    right_bound = std::max(right_bound, vertex.y);
+  }
+  return right_bound;
+}
+
 double Rectangle::lower_bound() const {
   double lower_bound = std::numeric_limits<double>::infinity();
   for (const auto &vertex : vertices_) {
-    lower_bound = std::min(lower_bound, vertex.y);
+    lower_bound = std::min(lower_bound, vertex.z);
   }
   return lower_bound;
 }
+
 double Rectangle::upper_bound() const {
   double upper_bound = std::numeric_limits<double>::lowest();
   for (const auto &vertex : vertices_) {
-    upper_bound = std::max(upper_bound, vertex.y);
+    upper_bound = std::max(upper_bound, vertex.z);
   }
   return upper_bound;
 }
 
-bool Rectangle::intersects(const Rectangle &other) const {
+bool Rectangle::AABBIntersects(const Rectangle &other) const {
+  // use AABB to filter collision-free case
   if (this->lower_bound() > other.upper_bound()) {
     return false;
   }
   if (this->upper_bound() < other.lower_bound()) {
+    return false;
+  }
+  if (this->front_bound() > other.back_bound()) {
+    return false;
+  }
+  if (this->back_bound() < other.front_bound()) {
     return false;
   }
   if (this->left_bound() > other.right_bound()) {
@@ -46,7 +74,27 @@ bool Rectangle::intersects(const Rectangle &other) const {
   if (this->right_bound() < other.left_bound()) {
     return false;
   }
-  // TODO: complete this part
+  return true;
+}
+
+bool Rectangle::intersects(const Rectangle &other) const {
+  // use GJK algorithm to check collision
+  if (!AABBIntersects(other)) {
+    return false;
+  }
+  return GJK_algorithm(this, &other);
+}
+
+Rectangle AABBFromDiagonalPoints(const Vec3d &point1, const Vec3d &point2) {
+  std::vector<Vec3d> vertices = {point1,
+                                 Vec3d(point1.x, point1.y, point2.z),
+                                 Vec3d(point1.x, point2.y, point1.z),
+                                 Vec3d(point2.x, point1.y, point1.z),
+                                 Vec3d(point2.x, point2.y, point1.z),
+                                 Vec3d(point2.x, point1.y, point2.z),
+                                 Vec3d(point1.x, point2.y, point2.z),
+                                 point2};
+  return Rectangle(vertices);
 }
 
 }  // namespace Geometry
