@@ -2,6 +2,8 @@
 
 #include <algorithm>
 
+#include "rectangle.hpp"
+
 namespace Geometry {
 Vec3d LineSegment::support(const Vec3d& d) const {
   double dot_product1 = (endpoint1_ - center_).dot_product(d);
@@ -48,10 +50,21 @@ double LineSegment::distance_to(const Vec3d& point) const {
 }
 
 bool LineSegment::intersects(const LineSegment& other) const {
-  double this_left_bound = std::min(endpoint1_.x, endpoint2_.x);
-  double this_right_bound = std::max(endpoint1_.x, endpoint2_.x);
-  double this_lower_bound = std::min(endpoint1_.y, endpoint2_.y);
-  double this_upper_bound = std::max(endpoint1_.y, endpoint2_.y);
+  Rectangle rectangle1 = AABBFromDiagonalPoints(endpoint1_, endpoint2_);
+  Rectangle rectangle2 =
+      AABBFromDiagonalPoints(other.endpoint1_, other.endpoint2_);
+  if (!rectangle1.AABBIntersects(rectangle2)) {
+    return false;
+  }
+  // vector P1-Q1 and P2-Q1 should not be the same side of Q2 - Q1
+  // if two line segments intersect.
+  if ((endpoint1_ - other.endpoint1_)
+          .cross_product(other.direction())
+          .dot_product((endpoint2_ - other.endpoint1_)
+                           .cross_product(other.direction())) < 0) {
+    return true;
+  }
+  return false;
 }
 
 }  // namespace Geometry

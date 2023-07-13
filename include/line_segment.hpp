@@ -39,6 +39,8 @@ class LineSegment : public Shape {
 
   bool intersects(const LineSegment& other) const;
 
+  Vec3d direction() const { return endpoint1_ - endpoint2_; }
+
  private:
   Vec3d endpoint1_;
   Vec3d endpoint2_;
