@@ -39,6 +39,13 @@ TEST_F(LineSegmentTestSuite, Support) {
 }
 
 TEST_F(LineSegmentTestSuite, contains) {
+  Geometry::Vec3d direction = line_segment.direction();
+  ASSERT_NEAR(direction.x, -1.0, kEPS);
+  ASSERT_NEAR(direction.y, 6.0, kEPS);
+  ASSERT_NEAR(direction.z, 0.0, kEPS);
+}
+
+TEST_F(LineSegmentTestSuite, direction) {
   ASSERT_TRUE(line_segment.contains(endpoint1));
   ASSERT_TRUE(line_segment.contains(endpoint2));
   ASSERT_TRUE(line_segment.contains(Geometry::Vec3d(4.5, 8.0)));
@@ -55,4 +62,14 @@ TEST_F(LineSegmentTestSuite, distance_to) {
   ASSERT_NEAR(line_segment.distance_to(Geometry::kOrigin), 7.07106781, kEPS);
   ASSERT_NEAR(line_segment.distance_to(Geometry::Vec3d(3.0, 7.0)), 1.643989873,
               kEPS);
+}
+
+TEST_F(LineSegmentTestSuite, intersects) {
+  Geometry::LineSegment line_segment1 = Geometry::LineSegment(
+      Geometry::Vec3d(4.0, 6.0), Geometry::Vec3d(7.0, 11.0));
+  ASSERT_TRUE(line_segment.intersects(line_segment1));
+
+  Geometry::LineSegment line_segment2 = Geometry::LineSegment(
+      Geometry::Vec3d(5.0, 8.0), Geometry::Vec3d(6.0, 2.0));
+  ASSERT_FALSE(line_segment.intersects(line_segment2));
 }
