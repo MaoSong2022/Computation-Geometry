@@ -7,9 +7,9 @@ namespace Geometry {
  * @brief determine if two convex shapes intersect
  * @return true if two shapes intersect.
  */
-bool GJK_algorithm(Shape *a, Shape *b);
+bool GJK_algorithm(const Shape *a, const Shape *b);
 
-Vec3d support(Shape *a, Shape *b, const Vec3d &d);
+Vec3d support(const Shape *a, const Shape *b, const Vec3d &d);
 
 Vec3d triple_product(const Vec3d &a, const Vec3d &b, const Vec3d &c);
 

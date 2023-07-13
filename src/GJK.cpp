@@ -6,7 +6,7 @@
 #include "line_segment.hpp"
 
 namespace Geometry {
-bool GJK_algorithm(Shape *a, Shape *b) {
+bool GJK_algorithm(const Shape *a, const Shape *b) {
   Vec3d d = (a->center() - b->center()).normalize();
   std::vector<Vec3d> simplex;
   simplex.push_back(support(a, b, d));
@@ -24,7 +24,7 @@ bool GJK_algorithm(Shape *a, Shape *b) {
   return true;
 };
 
-Vec3d support(Shape *a, Shape *b, const Vec3d &d) {
+Vec3d support(const Shape *a, const Shape *b, const Vec3d &d) {
   return a->support(d) - b->support(-d);
 };
 
