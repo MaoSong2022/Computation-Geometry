@@ -18,6 +18,7 @@ class Shape {
 
   const Vec3d &center() const { return center_; }
   const std::vector<Vec3d> &vertices() const { return vertices_; }
+  std::vector<Vec3d> &vertices() { return vertices_; }
 
   /**
    * @brief compute the furthest point along a direction
