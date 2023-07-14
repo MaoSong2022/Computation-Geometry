@@ -61,6 +61,11 @@ double Vec3d::distance_to(const Vec3d &other) const {
 
 double Vec3d::length() const { return std::sqrt(x * x + y * y + z * z); }
 
+double Vec3d::distance_to_Line(const Vec3d &a, const Vec3d &b) const {
+  Vec3d direction = (b - a).normalize();
+  return (*this - a).dot_product(direction);
+}
+
 Vec3d Vec3d::normalize() const {
   const double length = this->length();
   if (length < kEPS) return kOrigin;

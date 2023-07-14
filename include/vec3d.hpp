@@ -35,6 +35,16 @@ struct Vec3d {
 
   double distance_to(const Vec3d &other) const;
 
+  /**
+   * @brief Calculates the distance from a point to a straight line determined
+   * by two points.
+   *
+   * @param a A point on the line.
+   * @param b Another point on the line.
+   * @return The distance between the point and the line.
+   */
+  double distance_to_Line(const Vec3d &a, const Vec3d &b) const;
+
   double length() const;
 
   Vec3d normalize() const;
