@@ -11,6 +11,8 @@ class Circle : public Shape {
   Circle(const Vec3d& center, double radius)
       : Shape({}, center), radius_(radius) {}
 
+  double radius() const { return radius_; }
+
   Vec3d support(const Vec3d& d) const override;
 };
 }  // namespace Geometry
