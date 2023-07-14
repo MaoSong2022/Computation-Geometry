@@ -1,12 +1,14 @@
-# GJK
+# Computation-Geometry
+An C++ based computation geometry library, used to find the relathionship between geometry shapes.
 
-An C++ implementation of the GJK([Gilbert–Johnson–Keerthi distance algorithm](https://en.wikipedia.org/wiki/Gilbert%E2%80%93Johnson%E2%80%93Keerthi_distance_algorithm)).
+Done:
+- [x] Implementation of GJK algorithm
+- [x] Implementation of Separate Axis Theorem algorithm
 
 Todo:
 - [ ] add computations of distance if two shapes do not collide.
 - [ ] add more test
 - [ ] add other collision detection algorithms
-  - [ ] SAT
   - [ ] AABB-surrogate
   - [ ] circle-surrogate
   
