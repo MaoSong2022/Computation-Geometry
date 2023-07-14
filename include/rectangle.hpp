@@ -1,6 +1,7 @@
 #pragma once
 
 #include "polygon.hpp"
+#include "circle.hpp"
 
 namespace Geometry {
 class Rectangle : public Polygon {
@@ -19,6 +20,12 @@ class Rectangle : public Polygon {
   bool AABBIntersects(const Rectangle &) const;
 
   bool intersects(const Rectangle&) const;
+
+  bool contains(const Vec3d &) const;
+
+  bool contains(const Rectangle &) const;
+
+  bool contains(const Circle &) const;
 };
 
 /**

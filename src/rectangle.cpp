@@ -1,5 +1,6 @@
 #include "rectangle.hpp"
 
+#include <algorithm>
 #include <limits>
 
 #include "GJK.hpp"
@@ -95,6 +96,36 @@ Rectangle AABBFromDiagonalPoints(const Vec3d &point1, const Vec3d &point2) {
                                  Vec3d(point1.x, point2.y, point2.z),
                                  point2};
   return Rectangle(vertices);
+}
+
+bool Rectangle::contains(const Vec3d &point) const {
+  return point.x >= left_bound() && point.x <= right_bound() &&
+         point.y >= front_bound() && point.y <= back_bound() &&
+         point.z >= lower_bound() && point.z <= upper_bound();
+}
+
+bool Rectangle::contains(const Rectangle &other) const {
+  for (const auto &vertex : other.vertices()) {
+    if (!contains(vertex)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+bool Rectangle::contains(const Circle &other) const {
+  if (!contains(other.center())) {
+    return false;
+  }
+  int n = vertices().size();
+  for (int i = 0; i < n; ++i) {
+    double distance =
+        other.center().distance_to_Line(vertices()[(i + 1) % n], vertices()[i]);
+    if (distance < other.radius()) {
+      return false;
+    }
+  }
+  return true;
 }
 
 }  // namespace Geometry
