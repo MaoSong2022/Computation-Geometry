@@ -63,7 +63,7 @@ double Vec3d::length() const { return std::sqrt(x * x + y * y + z * z); }
 
 double Vec3d::distance_to_Line(const Vec3d &a, const Vec3d &b) const {
   Vec3d direction = (b - a).normalize();
-  return (*this - a).dot_product(direction);
+  return (*this - a).cross_product(direction).length();
 }
 
 Vec3d Vec3d::normalize() const {
