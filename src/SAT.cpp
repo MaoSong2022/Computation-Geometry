@@ -1,5 +1,3 @@
-#pragma once
-
 #include "SAT.hpp"
 
 #include <limits>
