@@ -15,4 +15,20 @@ Vec3d Polygon::support(const Vec3d& d) const {
   }
   return vertices_[index];
 };
+
+bool Polygon::contains(const Vec3d& point) const {
+  int num_intersections = 0;
+  int num_vertices = vertices().size();
+  for (int i = 0; i < num_vertices; ++i) {
+    // get the edge
+    Vec3d p1 = vertices()[i];
+    Vec3d p2 = vertices()[(i + 1) % num_vertices];
+    // check if the edge intersects with the horizontal ray
+    if ((p1.y > point.y) != (p2.y > point.y) &&
+        (point.x < (p2.x - p1.x) * (point.y - p1.y) / (p2.y - p1.y) + p1.x)) {
+      ++num_intersections;
+    }
+  }
+  return num_intersections % 2 == 1;
+}
 }  // namespace Geometry

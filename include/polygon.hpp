@@ -15,5 +15,18 @@ class Polygon : public Shape {
   ~Polygon() {}
 
   Vec3d support(const Vec3d& d) const override;
+
+  /**
+   * @brief  if a point is contained within the polygon.
+   *
+   * This function tests if a point is contained within a polygon by
+   * counting the number of times a horizontal ray from the point intersects
+   * with the polygon edges. If the number of intersections is odd, then the
+   * point is contained within the polygon.
+   * @param point The point to check for containment.
+   * @return True if the point is contained within the polygon, false otherwise.
+   *
+   */
+  bool contains(const Vec3d&) const;
 };
 }  // namespace Geometry
