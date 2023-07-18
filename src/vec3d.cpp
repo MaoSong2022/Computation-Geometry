@@ -78,6 +78,10 @@ Vec3d Vec3d::cross_product(const Vec3d &other) const {
                this->x * other.y - this->y * other.x);
 }
 
+double Vec3d::cross_product_2d(const Vec3d &other) const {
+  return x * other.y - other.x * y;
+}
+
 Vec3d operator*(double scalar, const Vec3d &point) { return point * scalar; }
 
 }  // namespace Geometry

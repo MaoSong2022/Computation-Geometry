@@ -50,6 +50,14 @@ struct Vec3d {
   Vec3d normalize() const;
 
   Vec3d cross_product(const Vec3d &other) const;
+
+  /**
+   * @brief Computes the cross product of two vectors in 2 dimensional.
+   *
+   * @param other The other vector to compute the cross product with.
+   * @return The scalar value of the 2D cross product of the two vectors.
+   */
+  double cross_product_2d(const Vec3d &other) const;
 };
 
 Vec3d operator*(double scalar, const Vec3d &other);
