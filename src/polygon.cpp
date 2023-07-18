@@ -31,4 +31,9 @@ bool Polygon::contains(const Vec3d& point) const {
   }
   return num_intersections % 2 == 1;
 }
+
+bool Polygon::contains(const LineSegment& line_segment) const {
+  return contains(line_segment.endpoint1()) &&
+         contains(line_segment.endpoint2());
+}
 }  // namespace Geometry
