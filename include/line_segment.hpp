@@ -19,6 +19,9 @@ class LineSegment : public Shape {
   }
   ~LineSegment() {}
 
+  const Vec3d& endpoint1() const { return endpoint1_; }
+  const Vec3d& endpoint2() const { return endpoint2_; }
+
   Vec3d support(const Vec3d& d) const override;
 
   /**
