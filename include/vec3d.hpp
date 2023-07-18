@@ -62,5 +62,13 @@ struct Vec3d {
 
 Vec3d operator*(double scalar, const Vec3d &other);
 
+/**
+ * Swaps the values of two 3D vectors in place.
+ *
+ * @param lhs The first vector to swap.
+ * @param rhs The second vector to swap.
+ */
+void swap(Vec3d &lhs, Vec3d &rhs);
+
 const Vec3d kOrigin = Vec3d(0.0, 0.0, 0.0);
 }  // namespace Geometry

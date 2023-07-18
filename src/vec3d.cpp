@@ -1,5 +1,6 @@
 #include "vec3d.hpp"
 
+#include <algorithm> // swap
 #include <cmath>  // abs, sqrt
 
 namespace Geometry {
@@ -83,5 +84,11 @@ double Vec3d::cross_product_2d(const Vec3d &other) const {
 }
 
 Vec3d operator*(double scalar, const Vec3d &point) { return point * scalar; }
+
+void swap(Vec3d &lhs, Vec3d &rhs) {
+  std::swap(lhs.x, rhs.x);
+  std::swap(lhs.y, rhs.y);
+  std::swap(lhs.z, rhs.z);
+}
 
 }  // namespace Geometry
