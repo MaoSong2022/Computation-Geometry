@@ -50,6 +50,10 @@ Vec3d &Vec3d::operator/=(const double value) {
   return *this;
 }
 
+bool Vec3d::operator<(const Vec3d &other) const {
+  return distance_to(kOrigin) < other.distance_to(kOrigin);
+}
+
 double Vec3d::dot_product(const Vec3d &other) const {
   return x * other.x + y * other.y + z * other.z;
 };

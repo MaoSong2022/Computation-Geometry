@@ -31,6 +31,17 @@ struct Vec3d {
 
   Vec3d &operator/=(const double value);
 
+  /**
+   * @brief check if one vector is less than the other
+   *
+   * @details One vector is said to be less than the other if the one is closer
+   * to the origin.
+   *
+   * @param other the vector to be compared with.
+   * @return true if one vector is less than the other; false otherwise.
+   */
+  bool operator<(const Vec3d &other) const;
+
   double dot_product(const Vec3d &other) const;
 
   double distance_to(const Vec3d &other) const;
