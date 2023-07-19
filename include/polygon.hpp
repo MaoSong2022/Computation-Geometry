@@ -15,6 +15,17 @@ class Polygon : public Shape {
   }
   ~Polygon() {}
 
+  /**
+   * @brief check if two polygons are equal
+   *
+   * @details Two polygons are equal if they contain the same vertices
+   *
+   * @return True if two polygons are equal, false otherwise
+   */
+  bool operator==(const Polygon&) const;
+
+  bool operator!=(const Polygon&) const;
+
   Vec3d support(const Vec3d& d) const override;
 
   /**

@@ -1,6 +1,7 @@
 #include "polygon.hpp"
 
 #include <limits>
+#include <set>
 
 namespace Geometry {
 Vec3d Polygon::support(const Vec3d& d) const {
@@ -15,6 +16,18 @@ Vec3d Polygon::support(const Vec3d& d) const {
   }
   return vertices_[index];
 };
+
+bool Polygon::operator==(const Polygon& other) const {
+  if (vertices().size() != other.vertices().size()) {
+    return false;
+  }
+  return std::set<Vec3d>(vertices().begin(), vertices().end()) ==
+         std::set<Vec3d>(other.vertices().begin(), other.vertices().end());
+}
+
+bool Polygon::operator!=(const Polygon& other) const {
+  return !(*this == other);
+}
 
 bool Polygon::contains(const Vec3d& point) const {
   int num_intersections = 0;

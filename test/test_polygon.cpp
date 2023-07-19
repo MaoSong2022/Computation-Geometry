@@ -42,3 +42,22 @@ TEST_F(PolygonTestSuite, contains) {
   ASSERT_FALSE(triangle1->contains(point1));
   ASSERT_FALSE(triangle1->contains(point2));
 }
+
+TEST_F(PolygonTestSuite, equal) {
+  ASSERT_TRUE((*triangle1) ==
+              (Geometry::Polygon(std::vector<Geometry::Vec3d>{
+                  Geometry::Vec3d(4.0, 11.0), Geometry::Vec3d(9.0, 9.0),
+                  Geometry::Vec3d(5.0, 5.0)})));
+  ASSERT_TRUE((*triangle1) ==
+              (Geometry::Polygon(std::vector<Geometry::Vec3d>{
+                  Geometry::Vec3d(9.0, 9.0), Geometry::Vec3d(5.0, 5.0),
+                  Geometry::Vec3d(4.0, 11.0)})));
+  ASSERT_FALSE((*triangle1) ==
+               (Geometry::Polygon(std::vector<Geometry::Vec3d>{
+                   Geometry::Vec3d(9.0, 9.0), Geometry::Vec3d(5.0, 5.0),
+                   Geometry::Vec3d(4.0, 11.0), Geometry::Vec3d(5.0, 11.0)})));
+  ASSERT_FALSE((*triangle1) ==
+               (Geometry::Polygon(std::vector<Geometry::Vec3d>{
+                   Geometry::Vec3d(9.0, 9.0), Geometry::Vec3d(5.0, 5.0),
+                   Geometry::Vec3d(4.0, 11.1)})));
+}
