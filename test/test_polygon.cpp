@@ -61,3 +61,15 @@ TEST_F(PolygonTestSuite, equal) {
                    Geometry::Vec3d(9.0, 9.0), Geometry::Vec3d(5.0, 5.0),
                    Geometry::Vec3d(4.0, 11.1)})));
 }
+
+TEST_F(PolygonTestSuite, contains_line_segment) {
+  Geometry::LineSegment line_segment1 =
+      Geometry::LineSegment(Geometry::Vec3d(4, 4), Geometry::Vec3d(8, 4));
+  Geometry::LineSegment line_segment2 =
+      Geometry::LineSegment(Geometry::Vec3d(5, 10), Geometry::Vec3d(6, 7));
+  Geometry::LineSegment line_segment3 =
+      Geometry::LineSegment(Geometry::Vec3d(6, 9), Geometry::Vec3d(8, 11));
+  ASSERT_TRUE(triangle1->contains(line_segment2));
+  ASSERT_FALSE(triangle1->contains(line_segment3));
+  ASSERT_FALSE(triangle1->contains(line_segment1));
+}
