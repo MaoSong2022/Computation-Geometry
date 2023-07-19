@@ -73,3 +73,20 @@ TEST_F(PolygonTestSuite, contains_line_segment) {
   ASSERT_FALSE(triangle1->contains(line_segment3));
   ASSERT_FALSE(triangle1->contains(line_segment1));
 }
+
+TEST_F(PolygonTestSuite, from_vertices) {
+  std::vector<Geometry::Vec3d> points1{
+      Geometry::Vec3d(4.0, 11.0), Geometry::Vec3d(5.0, 5.0),
+      Geometry::Vec3d(9.0, 9.0),  Geometry::Vec3d(5, 9),
+      Geometry::Vec3d(7, 9),      Geometry::Vec3d(6, 7)};
+  ASSERT_TRUE(Geometry::Polygon::from_vertices(points1) == (*triangle1));
+
+  points1.push_back(Geometry::Vec3d(4.0, 11.0));
+  ASSERT_TRUE(Geometry::Polygon::from_vertices(points1) == (*triangle1));
+
+  points1.push_back(Geometry::Vec3d(7.0, 7.0));
+  ASSERT_TRUE(Geometry::Polygon::from_vertices(points1) == (*triangle1));
+
+  points1.push_back(Geometry::Vec3d(10.0, 10.0));
+  ASSERT_FALSE(Geometry::Polygon::from_vertices(points1) == (*triangle1));
+}

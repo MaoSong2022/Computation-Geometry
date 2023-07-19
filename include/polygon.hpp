@@ -51,5 +51,24 @@ class Polygon : public Shape {
    * otherwise.
    */
   bool contains(const LineSegment& line_segment) const;
+
+  /**
+   * @brief Forms a convex polygon from a set of points using Gram's scan
+   * algorithm.
+   *
+   * @details The function takes a vector of 3D points as input, and returns a
+   * Polygon object that represents the convex polygon formed by the points. The
+   * algorithm sorts the points in lexicographic order based on their x and y
+   * coordinates, and then applies Gram's scan algorithm to construct the convex
+   * hull of the points in O(n log n) time.
+   *
+   * @param points A vector of 3D points.
+   *
+   * @return A Polygon object representing the convex polygon formed by the
+   * input points.
+   *
+   * @throws std::invalid_argument If the number of points is less than 3.
+   */
+  static Polygon from_vertices(std::vector<Vec3d>& points);
 };
 }  // namespace Geometry
