@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 namespace Geometry {
 
 struct Vec3d {
@@ -80,6 +82,8 @@ Vec3d operator*(double scalar, const Vec3d &other);
  * @param rhs The second vector to swap.
  */
 void swap(Vec3d &lhs, Vec3d &rhs);
+
+std::ostream &operator<<(std::ostream &os, const Vec3d &point);
 
 const Vec3d kOrigin = Vec3d(0.0, 0.0, 0.0);
 }  // namespace Geometry

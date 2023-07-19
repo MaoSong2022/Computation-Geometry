@@ -89,6 +89,11 @@ double Vec3d::cross_product_2d(const Vec3d &other) const {
 
 Vec3d operator*(double scalar, const Vec3d &point) { return point * scalar; }
 
+std::ostream &operator<<(std::ostream &os, const Vec3d &point) {
+  os << "Vec3d(" << point.x << ", " << point.y << ", " << point.z << ")";
+  return os;
+}
+
 void swap(Vec3d &lhs, Vec3d &rhs) {
   std::swap(lhs.x, rhs.x);
   std::swap(lhs.y, rhs.y);
