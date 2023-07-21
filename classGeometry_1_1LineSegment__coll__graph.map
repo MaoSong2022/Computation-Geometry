@@ -1,0 +1,7 @@
+<map id="Geometry::LineSegment" name="Geometry::LineSegment">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,169,166,195"/>
+<area shape="rect" id="Node000002" href="$classGeometry_1_1Shape.html" title=" " alt="" coords="25,94,146,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,135,88,169,83,169,83,135"/>
+<area shape="rect" id="Node000003" href="$structGeometry_1_1Vec3d.html" title=" " alt="" coords="25,5,146,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="88,46,88,94,83,94,83,46"/>
+</map>

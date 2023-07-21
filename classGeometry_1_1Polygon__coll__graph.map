@@ -1,0 +1,7 @@
+<map id="Geometry::Polygon" name="Geometry::Polygon">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,169,135,195"/>
+<area shape="rect" id="Node000002" href="$classGeometry_1_1Shape.html" title=" " alt="" coords="10,94,130,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,135,73,169,67,169,67,135"/>
+<area shape="rect" id="Node000003" href="$structGeometry_1_1Vec3d.html" title=" " alt="" coords="10,5,130,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="73,46,73,94,67,94,67,46"/>
+</map>
