@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['operator_3c_0',['operator&lt;',['../structGeometry_1_1Vec3d.html#adee4fef0c0da8cda4f0fdf871d3b1452',1,'Geometry::Vec3d']]],
-  ['operator_3d_3d_1',['operator==',['../classGeometry_1_1Polygon.html#a5c49fb16752669c8163a590c0a5ceb45',1,'Geometry::Polygon']]]
+  ['endpoint1_0',['endpoint1',['../classGeometry_1_1LineSegment.html#a8a3ae01a8520d34e224ea9a504fc9559',1,'Geometry::LineSegment']]],
+  ['endpoint2_1',['endpoint2',['../classGeometry_1_1LineSegment.html#a28558024be8c4d71fc4ec87c486e45fa',1,'Geometry::LineSegment']]]
 ];

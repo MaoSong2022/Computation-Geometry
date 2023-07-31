@@ -107,39 +107,47 @@ Collaboration diagram for Geometry::Polygon:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa1c38b0e634c8ddcbd95dd2e57f24ce2"><td class="memItemLeft" align="right" valign="top"><a id="aa1c38b0e634c8ddcbd95dd2e57f24ce2" name="aa1c38b0e634c8ddcbd95dd2e57f24ce2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Polygon</b> (const std::vector&lt; <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &gt; &amp;vertices)</td></tr>
+<tr class="memitem:aa1c38b0e634c8ddcbd95dd2e57f24ce2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry_1_1Polygon.html#aa1c38b0e634c8ddcbd95dd2e57f24ce2">Polygon</a> (const std::vector&lt; <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &gt; &amp;<a class="el" href="classGeometry_1_1Shape.html#abf7a95ef9915002769bbe5c170506f08">vertices</a>)</td></tr>
+<tr class="memdesc:aa1c38b0e634c8ddcbd95dd2e57f24ce2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classGeometry_1_1Polygon.html">Polygon</a> object from a vector of vertices.  <br /></td></tr>
 <tr class="separator:aa1c38b0e634c8ddcbd95dd2e57f24ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c49fb16752669c8163a590c0a5ceb45"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry_1_1Polygon.html#a5c49fb16752669c8163a590c0a5ceb45">operator==</a> (const <a class="el" href="classGeometry_1_1Polygon.html">Polygon</a> &amp;) const</td></tr>
-<tr class="memdesc:a5c49fb16752669c8163a590c0a5ceb45"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if two polygons are equal  <br /></td></tr>
-<tr class="separator:a5c49fb16752669c8163a590c0a5ceb45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62b63a133ed46ae3954786467dc21086"><td class="memItemLeft" align="right" valign="top"><a id="a62b63a133ed46ae3954786467dc21086" name="a62b63a133ed46ae3954786467dc21086"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classGeometry_1_1Polygon.html">Polygon</a> &amp;) const</td></tr>
-<tr class="separator:a62b63a133ed46ae3954786467dc21086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c6e642e3806d6f57b6159ab06bbf193"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry_1_1Polygon.html#a7c6e642e3806d6f57b6159ab06bbf193">operator==</a> (const <a class="el" href="classGeometry_1_1Polygon.html">Polygon</a> &amp;other) const</td></tr>
+<tr class="memdesc:a7c6e642e3806d6f57b6159ab06bbf193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if two polygons are equal.  <br /></td></tr>
+<tr class="separator:a7c6e642e3806d6f57b6159ab06bbf193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad11fb4aedcbf6eb6273fc64fb19e312c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry_1_1Polygon.html#ad11fb4aedcbf6eb6273fc64fb19e312c">operator!=</a> (const <a class="el" href="classGeometry_1_1Polygon.html">Polygon</a> &amp;other) const</td></tr>
+<tr class="memdesc:ad11fb4aedcbf6eb6273fc64fb19e312c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if two polygons are not equal.  <br /></td></tr>
+<tr class="separator:ad11fb4aedcbf6eb6273fc64fb19e312c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68930624c7a59066a61a15c0d25b8d37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry_1_1Polygon.html#a68930624c7a59066a61a15c0d25b8d37">support</a> (const <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &amp;d) const override</td></tr>
-<tr class="memdesc:a68930624c7a59066a61a15c0d25b8d37"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute the furthest point along a direction  <br /></td></tr>
+<tr class="memdesc:a68930624c7a59066a61a15c0d25b8d37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the support point in the given direction.  <br /></td></tr>
 <tr class="separator:a68930624c7a59066a61a15c0d25b8d37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54a57daac8121777e3ad63d9497a0b78"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry_1_1Polygon.html#a54a57daac8121777e3ad63d9497a0b78">contains</a> (const <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &amp;point) const</td></tr>
-<tr class="memdesc:a54a57daac8121777e3ad63d9497a0b78"><td class="mdescLeft">&#160;</td><td class="mdescRight">if a point is contained within the polygon.  <br /></td></tr>
+<tr class="memdesc:a54a57daac8121777e3ad63d9497a0b78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a point is contained within the polygon.  <br /></td></tr>
 <tr class="separator:a54a57daac8121777e3ad63d9497a0b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a064cbc942dfab0065e11717f112d9cfa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry_1_1Polygon.html#a064cbc942dfab0065e11717f112d9cfa">contains</a> (const <a class="el" href="classGeometry_1_1LineSegment.html">LineSegment</a> &amp;line_segment) const</td></tr>
-<tr class="memdesc:a064cbc942dfab0065e11717f112d9cfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">if a line segment is contained within the polygon.  <br /></td></tr>
+<tr class="memdesc:a064cbc942dfab0065e11717f112d9cfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a line segment is contained within the polygon.  <br /></td></tr>
 <tr class="separator:a064cbc942dfab0065e11717f112d9cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classGeometry_1_1Shape"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classGeometry_1_1Shape')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classGeometry_1_1Shape.html">Geometry::Shape</a></td></tr>
-<tr class="memitem:aa011164562a451c4807debb9c9a6ee46 inherit pub_methods_classGeometry_1_1Shape"><td class="memItemLeft" align="right" valign="top">
-&#160;</td><td class="memItemRight" valign="bottom"><b>Shape</b> (const std::vector&lt; <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &gt; &amp;vertices, const <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &amp;center)</td></tr>
+<tr class="memitem:af1811084398b4072a40113c4c34cbde1 inherit pub_methods_classGeometry_1_1Shape"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>Shape</b> ()=default</td></tr>
+<tr class="memdesc:af1811084398b4072a40113c4c34cbde1 inherit pub_methods_classGeometry_1_1Shape"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="classGeometry_1_1Shape.html">Shape</a>. <br /></td></tr>
+<tr class="separator:af1811084398b4072a40113c4c34cbde1 inherit pub_methods_classGeometry_1_1Shape"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa011164562a451c4807debb9c9a6ee46 inherit pub_methods_classGeometry_1_1Shape"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry_1_1Shape.html#aa011164562a451c4807debb9c9a6ee46">Shape</a> (const std::vector&lt; <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &gt; &amp;<a class="el" href="classGeometry_1_1Shape.html#abf7a95ef9915002769bbe5c170506f08">vertices</a>, const <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &amp;<a class="el" href="classGeometry_1_1Shape.html#adebc16121a4c75ba48b0f6e7e14ab99d">center</a>)</td></tr>
+<tr class="memdesc:aa011164562a451c4807debb9c9a6ee46 inherit pub_methods_classGeometry_1_1Shape"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classGeometry_1_1Shape.html">Shape</a>.  <br /></td></tr>
 <tr class="separator:aa011164562a451c4807debb9c9a6ee46 inherit pub_methods_classGeometry_1_1Shape"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adebc16121a4c75ba48b0f6e7e14ab99d inherit pub_methods_classGeometry_1_1Shape"><td class="memItemLeft" align="right" valign="top">
-const <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>center</b> () const</td></tr>
+<tr class="memitem:a2f668d80c0a457a81a96de0253cfc67d inherit pub_methods_classGeometry_1_1Shape"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Shape</b> ()=default</td></tr>
+<tr class="memdesc:a2f668d80c0a457a81a96de0253cfc67d inherit pub_methods_classGeometry_1_1Shape"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for <a class="el" href="classGeometry_1_1Shape.html">Shape</a>. <br /></td></tr>
+<tr class="separator:a2f668d80c0a457a81a96de0253cfc67d inherit pub_methods_classGeometry_1_1Shape"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adebc16121a4c75ba48b0f6e7e14ab99d inherit pub_methods_classGeometry_1_1Shape"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry_1_1Shape.html#adebc16121a4c75ba48b0f6e7e14ab99d">center</a> () const</td></tr>
+<tr class="memdesc:adebc16121a4c75ba48b0f6e7e14ab99d inherit pub_methods_classGeometry_1_1Shape"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the center point of the shape.  <br /></td></tr>
 <tr class="separator:adebc16121a4c75ba48b0f6e7e14ab99d inherit pub_methods_classGeometry_1_1Shape"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf7a95ef9915002769bbe5c170506f08 inherit pub_methods_classGeometry_1_1Shape"><td class="memItemLeft" align="right" valign="top">
-const std::vector&lt; <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>vertices</b> () const</td></tr>
+<tr class="memitem:abf7a95ef9915002769bbe5c170506f08 inherit pub_methods_classGeometry_1_1Shape"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry_1_1Shape.html#abf7a95ef9915002769bbe5c170506f08">vertices</a> () const</td></tr>
+<tr class="memdesc:abf7a95ef9915002769bbe5c170506f08 inherit pub_methods_classGeometry_1_1Shape"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the vertices of the shape.  <br /></td></tr>
 <tr class="separator:abf7a95ef9915002769bbe5c170506f08 inherit pub_methods_classGeometry_1_1Shape"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2534bc7fbb4941052c7c0feea3ef0488 inherit pub_methods_classGeometry_1_1Shape"><td class="memItemLeft" align="right" valign="top">
-std::vector&lt; <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>vertices</b> ()</td></tr>
+<tr class="memitem:a2534bc7fbb4941052c7c0feea3ef0488 inherit pub_methods_classGeometry_1_1Shape"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry_1_1Shape.html#a2534bc7fbb4941052c7c0feea3ef0488">vertices</a> ()</td></tr>
+<tr class="memdesc:a2534bc7fbb4941052c7c0feea3ef0488 inherit pub_methods_classGeometry_1_1Shape"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the vertices of the shape.  <br /></td></tr>
 <tr class="separator:a2534bc7fbb4941052c7c0feea3ef0488 inherit pub_methods_classGeometry_1_1Shape"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85a032e761796dbe94d112828da3ac72 inherit pub_methods_classGeometry_1_1Shape"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry_1_1Shape.html#a85a032e761796dbe94d112828da3ac72">support</a> (const <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &amp;d) const =0</td></tr>
-<tr class="memdesc:a85a032e761796dbe94d112828da3ac72 inherit pub_methods_classGeometry_1_1Shape"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute the furthest point along a direction  <br /></td></tr>
+<tr class="memdesc:a85a032e761796dbe94d112828da3ac72 inherit pub_methods_classGeometry_1_1Shape"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the furthest point along a direction.  <br /></td></tr>
 <tr class="separator:a85a032e761796dbe94d112828da3ac72 inherit pub_methods_classGeometry_1_1Shape"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -153,11 +161,48 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classGeometry_1_1Shape"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classGeometry_1_1Shape')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classGeometry_1_1Shape.html">Geometry::Shape</a></td></tr>
 <tr class="memitem:a1eaf2b8bd453860e89c494f9dc75991f inherit pro_attribs_classGeometry_1_1Shape"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a>&#160;</td><td class="memItemRight" valign="bottom"><b>center_</b></td></tr>
+<tr class="memdesc:a1eaf2b8bd453860e89c494f9dc75991f inherit pro_attribs_classGeometry_1_1Shape"><td class="mdescLeft">&#160;</td><td class="mdescRight">The center point of the shape. <br /></td></tr>
 <tr class="separator:a1eaf2b8bd453860e89c494f9dc75991f inherit pro_attribs_classGeometry_1_1Shape"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec2e57b592cb973621f32e4d0c7b86eb inherit pro_attribs_classGeometry_1_1Shape"><td class="memItemLeft" align="right" valign="top">
 std::vector&lt; <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vertices_</b></td></tr>
+<tr class="memdesc:aec2e57b592cb973621f32e4d0c7b86eb inherit pro_attribs_classGeometry_1_1Shape"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vertices of the shape. <br /></td></tr>
 <tr class="separator:aec2e57b592cb973621f32e4d0c7b86eb inherit pro_attribs_classGeometry_1_1Shape"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa1c38b0e634c8ddcbd95dd2e57f24ce2" name="aa1c38b0e634c8ddcbd95dd2e57f24ce2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1c38b0e634c8ddcbd95dd2e57f24ce2">&#9670;&#160;</a></span>Polygon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Geometry::Polygon::Polygon </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vertices</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="classGeometry_1_1Polygon.html">Polygon</a> object from a vector of vertices. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertices</td><td>The vertices that define the polygon. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a064cbc942dfab0065e11717f112d9cfa" name="a064cbc942dfab0065e11717f112d9cfa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a064cbc942dfab0065e11717f112d9cfa">&#9670;&#160;</a></span>contains() <span class="overload">[1/2]</span></h2>
@@ -175,7 +220,7 @@ std::vector&lt; <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &gt;
       </table>
 </div><div class="memdoc">
 
-<p>if a line segment is contained within the polygon. </p>
+<p>Checks if a line segment is contained within the polygon. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">line_segment</td><td>The line segment to check for containment.</td></tr>
@@ -202,7 +247,7 @@ std::vector&lt; <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &gt;
       </table>
 </div><div class="memdoc">
 
-<p>if a point is contained within the polygon. </p>
+<p>Checks if a point is contained within the polygon. </p>
 <p>This function tests if a point is contained within a polygon by counting the number of times a horizontal ray from the point intersects with the polygon edges. If the number of intersections is odd, then the point is contained within the polygon.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -239,7 +284,7 @@ std::vector&lt; <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &gt;
 </div><div class="memdoc">
 
 <p>Forms a convex polygon from a set of points using Gram's scan algorithm. </p>
-<p>The function takes a vector of 3D points as input, and returns a <a class="el" href="classGeometry_1_1Polygon.html">Polygon</a> object that represents the convex polygon formed by the points. The algorithm sorts the points in lexicographic order based on their x and y coordinates, and then applies Gram's scan algorithm to construct the convex hull of the points in O(n log n) time.</p>
+<p>The function takes a vector of 3D points as input and returns a <a class="el" href="classGeometry_1_1Polygon.html">Polygon</a> object that represents the convex polygon formed by the points. The algorithm sorts the points in lexicographic order based on their x and y coordinates and then applies Gram's scan algorithm to construct the convex hull of the points in O(n log n) time.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">points</td><td>A vector of 3D points.</td></tr>
@@ -256,8 +301,35 @@ std::vector&lt; <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &gt;
 
 </div>
 </div>
-<a id="a5c49fb16752669c8163a590c0a5ceb45" name="a5c49fb16752669c8163a590c0a5ceb45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c49fb16752669c8163a590c0a5ceb45">&#9670;&#160;</a></span>operator==()</h2>
+<a id="ad11fb4aedcbf6eb6273fc64fb19e312c" name="ad11fb4aedcbf6eb6273fc64fb19e312c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad11fb4aedcbf6eb6273fc64fb19e312c">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::Polygon::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGeometry_1_1Polygon.html">Polygon</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if two polygons are not equal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The other polygon to compare.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the polygons are not equal, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a7c6e642e3806d6f57b6159ab06bbf193" name="a7c6e642e3806d6f57b6159ab06bbf193"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c6e642e3806d6f57b6159ab06bbf193">&#9670;&#160;</a></span>operator==()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -272,9 +344,15 @@ std::vector&lt; <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &gt;
       </table>
 </div><div class="memdoc">
 
-<p>check if two polygons are equal </p>
-<p>Two polygons are equal if they contain the same vertices</p>
-<dl class="section return"><dt>Returns</dt><dd>True if two polygons are equal, false otherwise </dd></dl>
+<p>Checks if two polygons are equal. </p>
+<p>Two polygons are considered equal if they contain the same vertices.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The other polygon to compare.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the polygons are equal, false otherwise. </dd></dl>
 
 </div>
 </div>
@@ -302,14 +380,14 @@ std::vector&lt; <a class="el" href="structGeometry_1_1Vec3d.html">Vec3d</a> &gt;
 </table>
 </div><div class="memdoc">
 
-<p>compute the furthest point along a direction </p>
+<p>Returns the support point in the given direction. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">d</td><td>direction </td></tr>
+    <tr><td class="paramname">d</td><td>The direction vector.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Point </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The support point in the given direction. </dd></dl>
 
 <p>Implements <a class="el" href="classGeometry_1_1Shape.html#a85a032e761796dbe94d112828da3ac72">Geometry::Shape</a>.</p>
 
